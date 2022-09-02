@@ -1,0 +1,5 @@
+{ "input_folder_path": "practice_data", 
+  "output_folder_path": "ingested_data", 
+  "test_data_path": "test_data", 
+  "output_model_path": "practice_models", 
+  "prod_deployment_path": "production_deployment"}
