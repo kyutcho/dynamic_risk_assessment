@@ -19,7 +19,7 @@ img_save_path = os.path.join(config['output_model_path'])
 
 
 ##############Function for reporting
-def score_model():
+def evaluate_model(is_redeploy=False):
     #calculate a confusion matrix using the test data and the deployed model
     #write the confusion matrix to the workspace
     y_true, y_pred = model_predictions(os.path.join(dataset_csv_path, "test_data.csv"))
@@ -30,8 +30,11 @@ def score_model():
 
     cm_disp.plot()
 
-    plt.savefig(os.path.join(img_save_path, "confusion_matrix.png"))
+    if not is_redeploy:
+        plt.savefig(os.path.join(img_save_path, "confusion_matrix.png"))
+    else:
+        plt.savefig(os.path.join(img_save_path, "confusion_matrix_2.png"))
 
 
 if __name__ == '__main__':
-    score_model()
+    evaluate_model()
