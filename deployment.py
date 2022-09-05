@@ -40,5 +40,9 @@ def store_model_into_pickle(model):
     dst = os.path.join(prod_deployment_path, 'ingested_files.txt')
     shutil.copy2(src, dst)
     
-        
 
+if __name__ == '__main__':
+    with open(os.path.join(model_path, "trained_model.pkl"), 'rb') as f:
+        lr = pickle.load(f)
+
+    store_model_into_pickle(lr)

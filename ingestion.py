@@ -38,7 +38,7 @@ def merge_multiple_dataframe():
     if not os.path.exists(output_folder_path):
         path = os.path.join(root_dir, output_folder_path)
         os.mkdir(output_folder_path)
-    final_df.to_csv(os.path.join(output_folder_path,'final_data.csv'))
+    final_df.to_csv(os.path.join(output_folder_path,'final_data.csv'), index=False)
 
     file_list = list(itertools.chain.from_iterable(ingested_file_list))
     with open(os.path.join(output_folder_path, 'ingested_files.txt'), 'w') as f:
